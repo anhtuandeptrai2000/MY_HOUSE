@@ -1,0 +1,10 @@
+<h1>{{person.persion_name}}</h1>
+<ul>
+    {% for choice in question.choice_text.all %}
+    <li>
+        {{choice.choice_text}} -- {{choice.votes}} votes{choice.votes|pluralize}}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{%url 'asigm_1_tapp:detail' person.id%}">Vote again</a>

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "user_auth",
     "asigm_1_app.apps.Asigm1AppConfig",
     "django.contrib.admin",
     "django.contrib.auth",

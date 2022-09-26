@@ -1,6 +1,6 @@
 <h1>{Person.Person_id}</h1>
 <ul>
-    {% for in Person %}
-    <li>{ you looking is here}</li>
-    {%endfor}
+    {% for in Person in Person_set.all %}
+    <li>{% Person.Person_set %}</li>
+    {% endfor %}
 </ul>

@@ -1,8 +1,7 @@
-from unicodedata import name
-from unittest import result
 from django.urls import path
 from .import views
 
+app_name = "polls"
 urlpatterns = [
     path('', views.index , name='index'),
     path('<int:question_id>/detail', views.detail , name='detail'),

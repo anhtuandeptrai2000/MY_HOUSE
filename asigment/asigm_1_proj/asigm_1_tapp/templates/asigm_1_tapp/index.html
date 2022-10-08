@@ -1,13 +1,16 @@
-{% if latest_person_list %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'asigm_1_tapp/style.css' %}">
+{% if person_list_all %}
     <ul>
-       {% for person in latest_person_list %}
-       <li>
-             <a href="{% url 'asigm_1_tapp : detail' person.id %}">
-               {{ person }}" 
-             </a>
-       <li>
-       {% endfor %}
+        {% for person in person_list_all %}
+            <li>
+                <a href="detail/{{person.id}}">
+                    <!-- muốn in ra như thế nào thì dùng thuộc tính vào đấy vd persion_id -->
+                    {{ person.persion_name }} 
+                </a>
+            </li>
+        {% endfor %}
     </ul>
 {% else %}
-   <p>No polls are available.</p>
+    <p>No person are available.</p>
 {% endif %}

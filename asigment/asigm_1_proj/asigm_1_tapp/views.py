@@ -1,9 +1,9 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,Http404,HttpResponseRedirect
-from.models import Person
 from django.template import loader
 from django.urls import reverse
-from django.views import generic
+from .models import Person
+ 
 
 
 # Create your views here.
@@ -48,10 +48,11 @@ from django.views import generic
 #     return render(request,'asigm_1_tapp/detail.html',{'person':person})
 
 def index(request):
-    lastest_person_list = Person.objects
+    person_list_all = Person.objects.all()
+    print(person_list_all)
     template = loader.get_template('asigm_1_tapp/index.html')
     context = {
-        'lastest_person_list': lastest_person_list,
+        'person_list_all': person_list_all,
     }
     return HttpResponse(template.render(context, request))
 
@@ -59,24 +60,5 @@ def detail(request,person_id):
     try:
         person = Person.objects.get(pk=person_id)
     except Person.DoesNotExist:
-        raise Http404("Question does not exist detail")
+        raise Http404("persion does not exist detail")
     return render(request,'asigm_1_tapp/detail.html',{'person':person})
-
-def vote(request,person_id):
-    # return HttpResponse("You are voting on question %s." % question_id)
-    person = get_object_or_404(Person,pk = person_id)
-    try:
-        person = person.person_set_get(pk=request.POST['person'])
-    except (KeyError,person.DoesNotExist):
-        return render(request, 'asigm_1_tapp/detail.html',{
-            'person': person,
-            'error_messsage': "You did not select a person",
-        })
-    else:
-        person.votes += 1
-    return HttpResponseRedirect(reverse('polls:results', args=(person.id)))
-
-
-def results(request,person_id):
-    person = get_object_or_404(Person, pk=person_id)
-    return render(request, 'asigm_1_tapp/results.html', {'person': person})

@@ -1,18 +1,17 @@
-<h1>{{Person.persion_name}}</h1>
+<h1>{{Person.person_name}}</h1>
 <ul>
-    {% for person in Person.person_set.all %}
-    <li>
-        {{Person.persion_name}}
-    </li>
-    {% endfor %}
+    <li>{{ person_id }}</li>
+    <li>{{ person_age }}</li>
+    <li>{{ person_name }}</li>
+    <li>{{ person_address }}</li>
+    <li>{{ person_phone_number }}</li>
 </ul>
 
 
-<form action="{% url 'asigm_1_tapp.vote' person.id %}" method="post">
-    {% csrf token%}
-    {%for person in person.person_set.all%}
+<form action="{% url 'asigm_1_tapp' person.id %}" method="post">
+    {% csrf_token %}
         <input type="radio" name="person" id="person{{forloop.counter}}">
-        <label for="person{{forloop.counter}}">{{person.persion_name}</label>
+        <label for="person{{forloop.counter}}">{{ person_list_all }</label>
     {% endfor %}
     <input type="submit" value="Vote"/>
 </form>

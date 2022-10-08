@@ -20,4 +20,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('polls/', include('polls.urls')),
     path('user-auth/',include('user_auth.urls')),
+    path('file-upload/',include('file_uploader.urls')),
+    path('form-form-model/',include('form_form_model.urls')),
 ]

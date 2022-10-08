@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "form_form_model.apps.FormFormModelConfig",
+    "file_uploader",
     "user_auth",
     "polls.apps.PollsConfig",
     "django.contrib.admin",

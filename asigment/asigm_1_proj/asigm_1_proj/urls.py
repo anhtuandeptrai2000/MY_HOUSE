@@ -20,4 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("asigm_1_tapp/",include('asigm_1_tapp.urls')),
     path("user_auth/",include('user_auth.urls')),
+    path("DjangoApp/",include('DjangoApp.urls')),
 ]

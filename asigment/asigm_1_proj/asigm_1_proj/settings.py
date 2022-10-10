@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "DjangoApp.apps.DjangoappConfig",
     "user_auth",
     "asigm_1_tapp.apps.Asigm1TappConfig",
     "django.contrib.admin",

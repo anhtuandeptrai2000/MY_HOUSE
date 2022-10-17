@@ -1,0 +1,18 @@
+{% include listcustomer.html %}
+<div class="pagination">
+    <span class="step_links"> 
+        {% if customer.has_previous %}
+        <a href="?page={{ customers.previous_page_number }}">Previous</a>
+        {% endif %}
+    </span>
+
+    <span class="current">
+        Page {{ custommer.number }} of {{ customer.pagination.number_page }}
+    </span>
+
+    <span>
+        {% if customer.has_next %}
+        <a href="?page={{ customers.previous_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</div>

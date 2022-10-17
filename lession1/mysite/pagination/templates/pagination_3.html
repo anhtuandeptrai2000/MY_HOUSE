@@ -1,0 +1,19 @@
+{% include "list_customer.html" %}
+{% if customers.has_previous %}
+    <a href="?page={{ customers.previous_page_number }} ">Previous</a>
+
+    {% if customers.number > 3 %}
+        <a href="?page=1">1</a>
+        {% if customers.number >4 %}
+            <span>...</span>
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+{% for num in customers.pagination.page_range %} 
+    {% if customers.number == num %} 
+        <a href="?page={{ num }}">{{ num }}</a>
+    {% elif num > customers.number|add: '-3' and num < customers.number|add:'3' %} 
+        <a href="?page={{ num }}">{{ num }}</a>
+    {% endif %} 
+{% endfor %} 

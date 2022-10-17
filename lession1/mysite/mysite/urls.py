@@ -22,4 +22,7 @@ urlpatterns = [
     path('user-auth/',include('user_auth.urls')),
     path('file-upload/',include('file_uploader.urls')),
     path('form-form-model/',include('form_form_model.urls')),
+    path('registration/',include('registration.urls')),
+    path('pagination/',include('pagination.urls')),
+    path('adv_temp/',include('adv_temp.urls')),
 ]

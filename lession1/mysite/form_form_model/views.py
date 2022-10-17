@@ -5,7 +5,8 @@ from .models import Author,AuthorForm,Book,BookFrom
 # Create your views here.
 def index(request):
     if request.method == 'POST':
-        f = AuthorForm(request.POST)
+        a = Author.objects.get(pk=2)
+        f = AuthorForm(request.POST,instance=a)
         if f.is_valid():
             f.save()
             return HttpResponse("<h2> lưu thành công</h2>")

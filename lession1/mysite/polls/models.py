@@ -1,35 +1,35 @@
 from django.db import models
 
 # Create your models here.
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField(max_length=200)
-    def __str__(self):
-        return self.question_text
+# class Question(models.Model):
+#     question_text = models.CharField(max_length=200)
+#     pub_date = models.DateTimeField(max_length=200)
+#     def __str__(self):
+#         return self.question_text
 
-class Choice(models.Model):
-    question = models.ForeignKey(Question , on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-    def __str__ (self):
-        return self.choice_text
+# class Choice(models.Model):
+#     question = models.ForeignKey(Question , on_delete=models.CASCADE)
+#     choice_text = models.CharField(max_length=200)
+#     votes = models.IntegerField(default=0)
+#     def __str__ (self):
+#         return self.choice_text
 
-class Blog(models.Model):
+# class Blog(models.Model):
 
-    name = models.CharField(max_length=100)
+#     name = models.CharField(max_length=100)
 
-    tagline = models.TextField()
+#     tagline = models.TextField()
 
-    def __str__(self):
+#     def __str__(self):
 
-        return self.name
+#         return self.name
 
-class Author(models.Model):
+# class Author(models.Model):
 
-    name = models.CharField(max_length=50)
+#     name = models.CharField(max_length=50)
 
-    email = models.EmailField()
+#     email = models.EmailField()
 
-    def __str__(self):
+#     def __str__(self):
 
-        return self.name
+#         return self.name

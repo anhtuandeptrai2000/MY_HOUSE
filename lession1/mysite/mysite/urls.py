@@ -25,4 +25,6 @@ urlpatterns = [
     path('registration/',include('registration.urls')),
     path('pagination/',include('pagination.urls')),
     path('adv_temp/',include('adv_temp.urls')),
+    path('redis_cache/',include('redis_cache.urls')),
+    path('login_session',include('login_session.urls')),
 ]
